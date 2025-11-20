@@ -32,7 +32,7 @@ function startGame() {
             // <img id="0-0" src="./images/Red.png">
             let tile = document.createElement("img");
             tile.id = r.toString() + "-" + c.toString();
-            tile.src = "./icons_game/" + randomWakfu() + ".png";
+            tile.src = "icons_game/" + randomWakfu() + ".png";
 
             //DRAG FUNCTIONALITY
             tile.addEventListener("dragstart", dragStart); //click on a candy, initialize drag process
@@ -237,4 +237,5 @@ function endGame() {
     }
 
     alert("Tempo esgotado! Pontuação final: " + score);
+
 }
