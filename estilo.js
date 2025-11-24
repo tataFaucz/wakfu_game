@@ -35,12 +35,12 @@ function startGame() {
             tile.src = "icons_game/" + randomWakfu() + ".png";
 
             //DRAG FUNCTIONALITY
-            tile.addEventListener("dragstart", dragStart); //click on a candy, initialize drag process
-            tile.addEventListener("dragover", dragOver);  //clicking on candy, moving mouse to drag the candy
-            tile.addEventListener("dragenter", dragEnter); //dragging candy onto another candy
-            tile.addEventListener("dragleave", dragLeave); //leave candy over another candy
-            tile.addEventListener("drop", dragDrop); //dropping a candy over another candy
-            tile.addEventListener("dragend", dragEnd); //after drag process completed, we swap candies
+            tile.addEventListener("dragstart", dragStart); 
+            tile.addEventListener("dragover", dragOver);  
+            tile.addEventListener("dragenter", dragEnter);
+            tile.addEventListener("dragleave", dragLeave); 
+            tile.addEventListener("drop", dragDrop); 
+            tile.addEventListener("dragend", dragEnd); 
 
             document.getElementById("board").append(tile);
             row.push(tile);
@@ -141,9 +141,9 @@ function crushThree() {
             let icon2 = board[r][c+1];
             let icon3 = board[r][c+2];
             if (icon1.src == icon2.src && icon2.src == icon3.src && !icon1.src.includes("blank")) {
-                icon1.src = "./icons_game/blank.png";
-                icon2.src = "./icons_game/blank.png";
-                icon3.src = "./icons_game/blank.png";
+                icon1.src = "icons_game/blank.png";
+                icon2.src = "icons_game/blank.png";
+                icon3.src = "icons_game/blank.png";
                 score += 30;
             }
         }
@@ -156,9 +156,9 @@ function crushThree() {
             let icon2 = board[r+1][c];
             let icon3 = board[r+2][c];
             if (icon1.src == icon2.src && icon2.src == icon3.src && !icon1.src.includes("blank")) {
-                icon1.src = "./icons_game/blank.png";
-                icon2.src = "./icons_game/blank.png";
-                icon3.src = "./icons_game/blank.png";
+                icon1.src = "icons_game/blank.png";
+                icon2.src = "icons_game/blank.png";
+                icon3.src = "icons_game/blank.png";
                 score += 30;
             }
         }
@@ -205,7 +205,7 @@ function slideWakfu() {
         }
 
         for (let r = ind; r >= 0; r--) {
-            board[r][c].src = "./icons_game/blank.png";
+            board[r][c].src = "icons_game/blank.png";
         }
     }
 }
@@ -214,7 +214,7 @@ function slideWakfu() {
 function generateWakfu() {
     for (let c = 0; c < columns;  c++) {
         if (board[0][c].src.includes("blank")) {
-            board[0][c].src = "./icons_game/" + randomWakfu() + ".png";
+            board[0][c].src = "icons_game/" + randomWakfu() + ".png";
         }
     }
 }
@@ -239,3 +239,4 @@ function endGame() {
     alert("Tempo esgotado! Pontuação final: " + score);
 
 }
+
